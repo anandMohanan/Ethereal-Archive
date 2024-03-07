@@ -105,8 +105,6 @@ const getFileUrl = (fileId: GenericId<"_storage">) => {
 };
 
 export const FileGrid = ({ file }: { file: Doc<"files"> }) => {
-  console.log(getFileUrl(file.fileId));
-
   const typeIcons = {
     image: <ImageIcon />,
     pdf: <FileTextIcon />,

@@ -114,7 +114,6 @@ const UploadForm: React.FC<UploadFormProps> = ({ setOpen }) => {
   const fileRef = form.register("file");
   const { isLoaded: orgLoaded, organization } = useOrganization();
   const { user, isLoaded: userLoaded } = useUser();
-  console.log(user);
 
   let orgId: string | undefined = undefined;
   if (orgLoaded && userLoaded) {
@@ -126,7 +125,6 @@ const UploadForm: React.FC<UploadFormProps> = ({ setOpen }) => {
     try {
       if (!orgId) return;
 
-      console.log(values);
       const postUrl = await generateUploadUrl();
       const result = await fetch(postUrl, {
         method: "POST",
@@ -134,7 +132,6 @@ const UploadForm: React.FC<UploadFormProps> = ({ setOpen }) => {
         body: values.file[0],
       });
       const { storageId } = await result.json();
-      console.log(values.file[0].type);
 
       const types = {
         "image/png": "image",

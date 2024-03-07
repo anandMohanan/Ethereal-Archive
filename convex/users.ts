@@ -20,7 +20,6 @@ export const getUser = async (
 export const createUser = internalMutation({
   args: { tokenIdentifier: v.string() },
   async handler(ctx, args) {
-    console.log("create user", args.tokenIdentifier);
     await ctx.db.insert("users", {
       tokenIdentifier: args.tokenIdentifier,
       orgIds: [],
@@ -31,8 +30,6 @@ export const createUser = internalMutation({
 export const addOrgidToUser = internalMutation({
   args: { tokenIdentifier: v.string(), orgId: v.string() },
   async handler(ctx, args) {
-    console.log("add org", args.tokenIdentifier);
-
     const user = await getUser(ctx, args.tokenIdentifier);
 
     await ctx.db.patch(user._id, {

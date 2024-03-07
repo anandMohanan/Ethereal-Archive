@@ -12,7 +12,6 @@ export default function ClerkClientProvider({
   children: ReactNode;
 }) {
   const { theme } = useTheme();
-  console.log(theme, "thjkewhkjrewhkerjhwkhk");
 
   return (
     <ClerkProvider

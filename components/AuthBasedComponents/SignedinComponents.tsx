@@ -13,7 +13,6 @@ import { SearchBar } from "../SignedIn/SearchBar";
 export const SignedInComponents = () => {
   const { isLoaded: orgLoaded, organization } = useOrganization();
   const { user, isLoaded: userLoaded } = useUser();
-  console.log(user);
 
   let orgId: string | undefined = undefined;
   if (orgLoaded && userLoaded) {

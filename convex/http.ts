@@ -21,7 +21,7 @@ http.route({
           "svix-signature": headerPayload.get("svix-signature")!,
         },
       });
-
+      console.log(result);
       switch (result.type) {
         case "user.created":
           await ctx.runMutation(internal.users.createUser, {

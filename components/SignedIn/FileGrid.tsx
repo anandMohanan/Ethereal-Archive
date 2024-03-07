@@ -82,19 +82,18 @@ const FileActions = ({ file }: { file: Doc<"files"> }) => {
         <DropdownMenuTrigger>
           <ChevronDown />
         </DropdownMenuTrigger>
-        <Protect role="org:admin" fallback={<></>}>
-          <DropdownMenuContent>
-            <DropdownMenuItem
-              onClick={() => {
-                setConfirmDelete(true);
-              }}
-              className="flex gap-1 align-middle"
-            >
-              {" "}
-              <TrashIcon className="w-5 h-5" /> Delete
-            </DropdownMenuItem>
-          </DropdownMenuContent>
-        </Protect>
+
+        <DropdownMenuContent>
+          <DropdownMenuItem
+            onClick={() => {
+              setConfirmDelete(true);
+            }}
+            className="flex gap-1 align-middle"
+          >
+            {" "}
+            <TrashIcon className="w-5 h-5" /> Delete
+          </DropdownMenuItem>
+        </DropdownMenuContent>
       </DropdownMenu>
     </>
   );
@@ -121,15 +120,15 @@ export const FileGrid = ({ file }: { file: Doc<"files"> }) => {
         </div>
       </CardHeader>
       <CardContent className="h-[200px] flex justify-center items-center">
-        {file.fileType === "image" && (
+        {/* {file.fileType === "image" && (
           <Image
             alt={file.name}
-            width="500"
+            width="100"
             height="100"
             src={getFileUrl(file.fileId)}
             className="rounded-sm"
           />
-        )}
+        )} */}
 
         {file.fileType === "csv" && <GanttChartIcon className="w-20 h-20" />}
         {file.fileType === "pdf" && <FileTextIcon className="w-20 h-20" />}

@@ -40,6 +40,8 @@ http.route({
         status: 200,
       });
     } catch (err) {
+      console.log("error =====>", err);
+
       return new Response("Webhook Error", {
         status: 400,
       });
